@@ -3,8 +3,7 @@ package calendar.view;
 import calendar.controller.Controller;
 import javax.swing.JPanel;
 import javax.swing.JButton;
-import javax.swing.event;
-import javax.swing.table;
+
 
 
 import javax.swing.SpringLayout;
@@ -46,7 +45,11 @@ public class CalendarPanel extends JPanel
 
 	private void setupPanel()
 	{
-		
+		this.setLayout(layout);
+		this.setBackground(Color.DARK_GRAY);;
+		this.add(calendar);
+		this.add(menuPanel);
+		menuPanel.add(saveButton);
 	}
 
 	private void setupListeners()
