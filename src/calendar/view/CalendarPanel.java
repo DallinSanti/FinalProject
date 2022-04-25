@@ -4,6 +4,9 @@ import calendar.controller.Controller;
 import javax.swing.JPanel;
 import javax.swing.JButton;
 
+import java.time.format.DateTimeFormatter;
+import java.time.LocalDateTime;
+
 
 import javax.swing.SpringLayout;
 import java.awt.GridLayout;
@@ -16,6 +19,16 @@ import java.awt.event.ActionListener;
 import java.awt.GridLayout;
 
 import javax.swing.*;
+
+public class CurrentDateTime
+{
+	public static void main(String[] args) 
+	{  
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM/dd/yyyy HH:mm:ss");
+		LocalDateTime now = LocalDateTime.now();
+		System.out.println(dtf.format(now));
+	}  
+}
 
 public class CalendarPanel extends JPanel
 {
