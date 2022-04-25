@@ -1,4 +1,4 @@
-package last.controller;
+package calendar.controller;
 
 public class Controller
 {
