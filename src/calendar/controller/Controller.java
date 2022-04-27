@@ -25,8 +25,5 @@ private CalendarFrame frame;
 				JOptionPane.ERROR_MESSAGE);
 	}
 	
-	public void displayMessage
-	{
-		
-	}
+
 }

@@ -4,7 +4,7 @@ import calendar.controller.Controller;
 import javax.swing.JPanel;
 import javax.swing.JButton;
 
-import java.time.format.DateTimeFormatter;
+//import java.time.format.DateTimeFormatter;
 import java.time.LocalDateTime;
 
 import javax.swing.SpringLayout;
@@ -40,14 +40,14 @@ public class CalendarPanel extends JPanel
 	private JButton previousButton;
 	private JButton nextButton;
 	private SpringLayout layout;
-	private JButton saveButton;
+//	private JButton saveButton;
 
 
 	public CalendarPanel(Controller controller)
 	{
 		super();
 		this.controller = controller;
-		this.saveButton = new JButton("Save");
+		this.nextButton = new JButton("Next");
 		this.layout = new SpringLayout();
 		this.menuPanel = new JPanel(new GridLayout(0,1));
 	
@@ -63,7 +63,7 @@ public class CalendarPanel extends JPanel
 		this.setBackground(Color.DARK_GRAY);;
 		
 		this.add(menuPanel);
-		menuPanel.add(saveButton);
+		menuPanel.add(nextButton);
 	}
 
 	private void setupListeners()
