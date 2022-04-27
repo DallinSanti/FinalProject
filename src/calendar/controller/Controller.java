@@ -24,4 +24,9 @@ private CalendarFrame frame;
 		JOptionPane.showMessageDialog(frame,  error.getMessage(), "Calendar Error!",
 				JOptionPane.ERROR_MESSAGE);
 	}
+	
+	public void displayMessage
+	{
+		
+	}
 }

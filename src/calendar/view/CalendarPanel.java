@@ -7,28 +7,31 @@ import javax.swing.JButton;
 import java.time.format.DateTimeFormatter;
 import java.time.LocalDateTime;
 
-
 import javax.swing.SpringLayout;
 import java.awt.GridLayout;
-
 
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.event.ActionListener;
 import java.awt.GridLayout;
+import java.util.Calendar;
+
 
 import javax.swing.*;
 
-public class CurrentDateTime
-{
-	public static void main(String[] args) 
-	{  
-		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM/dd/yyyy HH:mm:ss");
-		LocalDateTime now = LocalDateTime.now();
-		System.out.println(dtf.format(now));
-	}  
-}
+//public class CurrentDateTime
+//{
+//	public static void main(String[] args) 
+//	{  
+//		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM/dd/yyyy HH:mm:ss");
+//		LocalDateTime now = LocalDateTime.now();
+//		System.out.println(dtf.format(now));
+//		
+//		Calendar calObject = Calendar.getInstance();
+//		System.out.println(dtf.format(calObject.getTime()));
+//	}  
+//}
 
 public class CalendarPanel extends JPanel
 {
