@@ -29,7 +29,7 @@ public class Calendar
 	}
 
 
-	private String getTime()
+	public String getTime()
 	{	
 		String time = "The time is ";
 	

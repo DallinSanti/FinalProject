@@ -19,7 +19,9 @@ private Calendar calendar;
 	public void start()
 	{
 		String date = calendar.getDate();
-		JOptionPane.showMessageDialog(frame,  "Welcome to Java Calendar! \n" + date);
+		String time = calendar.getTime();
+		JOptionPane.showMessageDialog(frame,  "Welcome to Java Calendar! \n" + date
+				+ time);
 	}
 	
 	public void handleError(Exception error)
