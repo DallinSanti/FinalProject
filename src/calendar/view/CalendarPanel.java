@@ -47,7 +47,7 @@ public class CalendarPanel extends JPanel
 	{
 		super();
 		this.controller = controller;
-		this.nextButton = new JButton("Next");
+		this.nextButton = new JButton("NEXT");
 		this.layout = new SpringLayout();
 		this.menuPanel = new JPanel(new GridLayout(0,1));
 	
