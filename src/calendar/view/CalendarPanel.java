@@ -4,7 +4,6 @@ import calendar.controller.Controller;
 import javax.swing.JPanel;
 import javax.swing.JButton;
 
-//import java.time.format.DateTimeFormatter;
 import java.time.LocalDateTime;
 
 import javax.swing.SpringLayout;
@@ -20,18 +19,6 @@ import java.util.Calendar;
 
 import javax.swing.*;
 
-//public class CurrentDateTime
-//{
-//	public static void main(String[] args) 
-//	{  
-//		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM/dd/yyyy HH:mm:ss");
-//		LocalDateTime now = LocalDateTime.now();
-//		System.out.println(dtf.format(now));
-//		
-//		Calendar calObject = Calendar.getInstance();
-//		System.out.println(dtf.format(calObject.getTime()));
-//	}  
-//}
 
 public class CalendarPanel extends JPanel
 {
@@ -60,7 +47,7 @@ public class CalendarPanel extends JPanel
 	private void setupPanel()
 	{
 		this.setLayout(layout);
-		this.setBackground(Color.DARK_GRAY);;
+		this.setBackground(Color.LIGHT_GRAY);
 		
 		this.add(menuPanel);
 		menuPanel.add(nextButton);
