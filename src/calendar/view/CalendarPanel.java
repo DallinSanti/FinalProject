@@ -25,7 +25,7 @@ public class CalendarPanel extends JPanel
 	private Controller controller;
 	private JPanel menuPanel;
 	private JButton previousButton;
-	private JButton nextButton;
+	private JButton calendarButton;
 	private SpringLayout layout;
 //	private JButton saveButton;
 
@@ -34,7 +34,7 @@ public class CalendarPanel extends JPanel
 	{
 		super();
 		this.controller = controller;
-		this.nextButton = new JButton("NEXT");
+		this.calendarButton = new JButton("Calendar");
 		this.layout = new SpringLayout();
 		this.menuPanel = new JPanel(new GridLayout(0,1));
 	
@@ -50,12 +50,12 @@ public class CalendarPanel extends JPanel
 		this.setBackground(Color.LIGHT_GRAY);
 		
 		this.add(menuPanel);
-		menuPanel.add(nextButton);
+		menuPanel.add(calendarButton);
 	}
 
 	private void setupListeners()
 	{
-		
+		calendarButton.addActionListener(click -> controller.getFrame().changeScreen("Days"));
 	}
 
 	private void setupLayout()
