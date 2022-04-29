@@ -21,18 +21,13 @@ private Calendar calendar;
 		String date = calendar.getDate();
 		String time = calendar.getTime();
 		JOptionPane.showMessageDialog(frame,  "Welcome to Java Calendar! \n" + date
-				+ time + "Click the ''Calendar'' button to continue to the calendar!");
+				+ time + "Click the 'NEXT' button to continue to the calendar!");
 	}
 	
 	public void handleError(Exception error)
 	{
 		JOptionPane.showMessageDialog(frame,  error.getMessage(), "Calendar Error!",
 				JOptionPane.ERROR_MESSAGE);
-	}
-	
-	public CalendarFrame getFrame()
-	{
-		return frame;
 	}
 	
 
