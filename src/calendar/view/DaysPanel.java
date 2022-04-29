@@ -9,6 +9,6 @@ public class DaysPanel extends JPanel
 {
 	public DaysPanel(Controller controller)
 	{
-		this.setBackground(Color.BLACK);
+		this.setBackground(Color.RED);
 	}
 }
