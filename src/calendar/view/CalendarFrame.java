@@ -64,7 +64,7 @@ public class CalendarFrame extends JFrame
 			calendarMenuBar.add(screenMenu);
 		}
 		
-		private void changeScreen(String screen)
+		public void changeScreen(String screen)
 		{
 			((CardLayout) cardPanel.getLayout()).show(cardPanel, screen);
 		}
@@ -72,11 +72,11 @@ public class CalendarFrame extends JFrame
 		private void setupFrame()
 	{
 //		Setup for the card layout
-		cardPanel.add(panel, DAYS_SCREEN);
 		cardPanel.add(panel, CALENDAR_SCREEN);
+		cardPanel.add(days, DAYS_SCREEN);
 			
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setContentPane(panel);
+		this.setContentPane(cardPanel);
 		this.setSize(800, 600);
 		this.setResizable(false);
 		this.setTitle("Welcome to my Java calendar!");
