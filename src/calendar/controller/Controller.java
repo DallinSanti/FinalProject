@@ -3,6 +3,7 @@ package calendar.controller;
 import javax.swing.JOptionPane;
 
 import calendar.view.CalendarFrame;
+import calendar.view.DaysPanel;
 import calendar.model.Calendar;
 
 public class Controller
@@ -24,6 +25,7 @@ private Calendar calendar;
 				+ time + "Click the ''Calendar'' button to continue to the calendar!");
 	}
 	
+	
 	public void handleError(Exception error)
 	{
 		JOptionPane.showMessageDialog(frame,  error.getMessage(), "Calendar Error!",
@@ -34,5 +36,7 @@ private Calendar calendar;
 	{
 		return frame;
 	}
+	
+	
 
 }

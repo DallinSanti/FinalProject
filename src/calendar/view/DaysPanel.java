@@ -2,6 +2,7 @@ package calendar.view;
 
 import javax.swing.JPanel;
 import calendar.controller.Controller;
+import javax.swing.JOptionPane;
 
 import java.io.*;
 import java.util.Scanner;
@@ -16,17 +17,24 @@ public class DaysPanel extends JPanel
 		this.setBackground(Color.RED);
 	}
 	
-	public static void main(String a[])
+	private void gatherInfo()
 	{
 	
 	Scanner sc = new Scanner(System.in);
 	
-	System.out.println("Enter the year: ");
-	int yy = sc.nextInt();
+	//System.out.println("Enter the year: ");
 	
-	System.out.println("Enter month: ");
+	String yearText = JOptionPane.showInputDialog(null, "What year?");
+	int  yearNum = Integer.parseInt(yearText);
 	
-	int mm = sc.nextInt();
+	//int yy = sc.nextInt();
+	
+	//System.out.println("Enter month: ");
+	String monthText = JOptionPane.showInputDialog(null, "What month(digits)");
+	int monthNum = Integer.parseInt(monthText);
+	String dateInfo = "";
+	
+	//int mm = sc.nextInt();
 	int d = 1;
 	int m = 1;
 	int y = 1;
@@ -45,7 +53,7 @@ public class DaysPanel extends JPanel
 	
 	while (true)
 	{
-		if (d == 1 && m == mm && y == yy)
+		if (d == 1 && m == monthNum && y == yearNum)
 		{
 			break;
 		}
@@ -91,16 +99,16 @@ public class DaysPanel extends JPanel
 		ar[1] = 28;
 	}
 	
-	System.out.println("Month:" + month[mm -1]);
+	dateInfo += "Month:" + month[monthNum -1] +"\n";
 	
 	for (int k = 0; k < 7; k++)
 	{
-		System.out.println(" " + day[k]);
+		dateInfo += " " + day[k];
 	}
 	
 	System.out.println();
 	
-	for (int j = 1; j <= (ar[mm - 1] + dy); j++)
+	for (int j = 1; j <= (ar[monthNum - 1] + dy); j++)
 	{
 		if (j < 6) 
 		{
@@ -114,11 +122,11 @@ public class DaysPanel extends JPanel
 	
 	for (int i = 0; i < spaces; i++)
 		System.out.println("  ");
-	for (int i = 1; i <= ar[mm - 1]; i++)
+	for (int i = 1; i <= ar[monthNum - 1]; i++)
 	{
 		System.out.printf(" %4d ", i);
 		
-		if (((i + spaces) % 7 == 0) || (i == ar[mm - 1]))
+		if (((i + spaces) % 7 == 0) || (i == ar[monthNum - 1]))
 			System.out.println();
 	}
 	
