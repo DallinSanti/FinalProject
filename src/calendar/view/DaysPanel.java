@@ -21,10 +21,10 @@ public class DaysPanel extends JPanel
 	
 	Scanner sc = new Scanner(System.in);
 	
-	System.out.println("Enter the year : ");
+	System.out.println("Enter the year: ");
 	int yy = sc.nextInt();
 	
-	System.out.println("Enter month : ");
+	System.out.println("Enter month: ");
 	
 	int mm = sc.nextInt();
 	int d = 1;
@@ -123,5 +123,5 @@ public class DaysPanel extends JPanel
 	}
 	
 	
-}
+	}	
 }
