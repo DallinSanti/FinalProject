@@ -34,6 +34,5 @@ private Calendar calendar;
 	{
 		return frame;
 	}
-	
 
 }

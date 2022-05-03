@@ -32,7 +32,7 @@ public class CalendarFrame extends JFrame
 	{
 		super();
 		this.app = app;
- 	
+		
 		this.panel = new CalendarPanel(this.app);
 		
 //		Using CardLayout with a MenuBar
@@ -74,7 +74,6 @@ public class CalendarFrame extends JFrame
 //		Setup for the card layout
 		cardPanel.add(panel, CALENDAR_SCREEN);
 		cardPanel.add(days, DAYS_SCREEN);
-		
 			
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setContentPane(cardPanel);
