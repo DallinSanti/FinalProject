@@ -3,6 +3,8 @@ package calendar.view;
 import javax.swing.JPanel;
 import calendar.controller.Controller;
 import javax.swing.JOptionPane;
+import javax.swing.JLabel;
+import javax.swing.BoxLayout;
 
 import java.io.*;
 import java.util.Scanner;
@@ -14,7 +16,10 @@ public class DaysPanel extends JPanel
 //	Color
 	public DaysPanel(Controller controller)
 	{
-		this.setBackground(Color.RED);
+		this.setBackground(Color.LIGHT_GRAY);
+		this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
+//		System.out.println("Days panel initiated ");
+		this.gatherInfo();
 	}
 	
 	private void gatherInfo()
@@ -99,12 +104,24 @@ public class DaysPanel extends JPanel
 		ar[1] = 28;
 	}
 	
-	dateInfo += "Month:" + month[monthNum -1] +"\n";
+	dateInfo += "Month: " + month[monthNum -1] +"\n";
 	
+	JLabel dateInfoLabel = new JLabel();
+	dateInfoLabel.setText(dateInfo);
+	add(dateInfoLabel);
+	System.out.println(dateInfo);
+	
+	JLabel daysOfTheMonthLabel = new JLabel();
+	String daysOfTheMonth = "";
+
 	for (int k = 0; k < 7; k++)
 	{
-		dateInfo += " " + day[k];
+		daysOfTheMonth += "   " + day[k];
+		System.out.printf("   " + day[k]);
+//		dateInfo += "   " + day[k];
 	}
+	daysOfTheMonthLabel.setText(daysOfTheMonth);
+	add(daysOfTheMonthLabel);
 	
 	System.out.println();
 	
@@ -120,16 +137,22 @@ public class DaysPanel extends JPanel
 	if (spaces < 0)
 		spaces = 6;
 	
+	JLabel daysLabel = new JLabel();
+	String daysLayout = "";
+	
 	for (int i = 0; i < spaces; i++)
-		System.out.println("  ");
+		daysLayout += "   ";
+		System.out.printf("    ");
 	for (int i = 1; i <= ar[monthNum - 1]; i++)
 	{
+		daysLayout += String.format(" %4d ", i);
 		System.out.printf(" %4d ", i);
 		
 		if (((i + spaces) % 7 == 0) || (i == ar[monthNum - 1]))
-			System.out.println();
+			daysLayout += String.format("%n");
+			System.out.println("this was hit");
 	}
-	
-	
-	}	
+		daysLabel.setText(daysLayout);
+		add(daysLabel);
+ }
 }
