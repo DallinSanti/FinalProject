@@ -104,7 +104,7 @@ public class DaysPanel extends JPanel
 		ar[1] = 28;
 	}
 	
-	dateInfo += "Month: " + month[monthNum -1] +"\n";
+	dateInfo += "Month: " + month[monthNum -1] +"\n" + "";
 	
 	JLabel dateInfoLabel = new JLabel();
 	dateInfoLabel.setText(dateInfo);
@@ -135,23 +135,29 @@ public class DaysPanel extends JPanel
 	
 	int spaces = dy;
 	if (spaces < 0)
+	{
 		spaces = 6;
-	
+	}
 	JLabel daysLabel = new JLabel();
-	String daysLayout = "";
+	String daysLayout = "<HTML>";
 	
 	for (int i = 0; i < spaces; i++)
-		daysLayout += "   ";
-		System.out.printf("    ");
+	{
+		daysLayout += "&nbsp&nbsp&nbsp&nbsp";
+	}//	System.out.printf("    ");
 	for (int i = 1; i <= ar[monthNum - 1]; i++)
 	{
 		daysLayout += String.format(" %4d ", i);
 		System.out.printf(" %4d ", i);
 		
 		if (((i + spaces) % 7 == 0) || (i == ar[monthNum - 1]))
-			daysLayout += String.format("%n");
-			System.out.println("this was hit");
+		{
+			daysLayout += "<br/>";
+		}
+			
+			
 	}
+	daysLayout += "</html>";
 		daysLabel.setText(daysLayout);
 		add(daysLabel);
  }
