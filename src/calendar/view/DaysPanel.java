@@ -11,6 +11,10 @@ import java.util.Scanner;
 
 import java.awt.Color;
 
+/**
+ * @author dsan1423
+ *This panel controls everything that happens after the "Calendar" button is pressed
+ */
 public class DaysPanel extends JPanel
 {
 //	Color

@@ -1,14 +1,14 @@
 package calendar.tests;
 
-public class ControllerTest 
-{
+
 	import static org.junit.jupiter.api.Assertions.*;
 
 	import org.junit.jupiter.api.AfterEach;
 	import org.junit.jupiter.api.BeforeEach;
 	import org.junit.jupiter.api.Test;
+	import calendar.controller.Controller;
 
-	class UpdateControllerTest
+	class ControllerTest
 	{
 		private Controller testedController;
 
@@ -35,6 +35,7 @@ public class ControllerTest
 		{
 			assertEquals("Description", testedController.toString(), "Words match");
 		}
-
 	}
-}
+
+
+
