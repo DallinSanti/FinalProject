@@ -2,7 +2,11 @@ package calendar.model;
 
 import java.time.LocalDateTime;
 
-//Class for the date & time
+/**
+ * @author dsan1423
+ * Gathers current date and time
+ */
+
 public class Calendar 
 {
 	
