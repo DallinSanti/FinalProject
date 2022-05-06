@@ -27,7 +27,6 @@ public class CalendarPanel extends JPanel
 	private JButton previousButton;
 	private JButton calendarButton;
 	private SpringLayout layout;
-//	private JButton saveButton;
 
 	/**
 	 * @param controller
