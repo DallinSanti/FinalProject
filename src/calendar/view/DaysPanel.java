@@ -22,7 +22,7 @@ public class DaysPanel extends JPanel
 	{
 		this.setBackground(Color.LIGHT_GRAY);
 		this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
-//		System.out.println("Days panel initiated ");
+
 		this.gatherInfo();
 	}
 	
@@ -30,14 +30,12 @@ public class DaysPanel extends JPanel
 	{
 	Scanner sc = new Scanner(System.in);
 	
-	//System.out.println("Enter the year: ");
+	
 	
 	String yearText = JOptionPane.showInputDialog(null, "What year?");
 	int  yearNum = Integer.parseInt(yearText);
 	
-	//int yy = sc.nextInt();
-	
-	//System.out.println("Enter month: ");
+
 	String monthText = JOptionPane.showInputDialog(null, "What month(digits)");
 	int monthNum = Integer.parseInt(monthText);
 	String dateInfo = "";
@@ -45,7 +43,7 @@ public class DaysPanel extends JPanel
 	/**
 	 * Ints for the days
 	 */
-	//int mm = sc.nextInt();
+
 	int d = 1;
 	int m = 1;
 	int y = 1;
@@ -83,7 +81,6 @@ public class DaysPanel extends JPanel
 			ar[1] = 28;
 			monthOffset = new int[] { 0, 3, 3, 6, 1, 4, 6, 2, 5, 0, 3, 5 };
 		}
-//		dy++;
 		d++;
 		
 		if (d > ar[m - 1])
@@ -98,13 +95,10 @@ public class DaysPanel extends JPanel
 			y++;
 		}
 		
-//		if (dy == 6)
-//		{
-//			dy = 0;
-//		}
+
 	}
 	
-//	int c = dy;
+
 	
 	if (y % 4 == 0 && y % 100 != 0 || y % 400 == 0)
 	{
@@ -132,20 +126,14 @@ public class DaysPanel extends JPanel
 	{
 		daysOfTheMonth += "   " + day[k];
 		System.out.printf("   " + day[k]);
-//		dateInfo += "   " + day[k];
+
 	}
 	daysOfTheMonthLabel.setText(daysOfTheMonth);
 	add(daysOfTheMonthLabel);
 	
 	System.out.println();
 	
-//	for (int j = 1; j <= (ar[monthNum - 1] + dy); j++)
-//	{
-//		if (j < 6) 
-//		{
-//			dy = dy % 6;
-//		}
-//	}
+
 	int year = yearNum - 1;
 	int beginningDay = (1 + monthOffset[monthNum - 1] + 5*(year % 4) + 4*(year % 100) + 6*(year % 400)) % 7;
 	System.out.println();
@@ -159,20 +147,14 @@ public class DaysPanel extends JPanel
 	}
 	JLabel daysLabel = new JLabel();
 	String daysLayout = "<HTML>";
-//	daysLayout += "<style>";
-//	daysLayout += ".day-layout{"; 
-//	daysLayout += "display: inline-block;";
-//	daysLayout += "width: 50px;";
-//	daysLayout += "text-align: center;";
-//	daysLayout += "} </style>";
+
 	
 	for (int i = 0; i < spaces; i++)
 	{
 		daysLayout += "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp";
-	}//	System.out.printf("    ");
+	}
 	for (int i = 1; i <= ar[monthNum - 1]; i++)
 	{
-//		daysLayout += "<span style='display: block; width: 50px; background-color: green; margin-left: 50px;'>" +  String.format(" %12d ", i) + "</span>";
 		if (i <= 9)
 		{
 			daysLayout += "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;" + i;
