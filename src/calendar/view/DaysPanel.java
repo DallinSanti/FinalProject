@@ -13,7 +13,7 @@ import java.awt.Color;
 
 /**
  * @author dsan1423
- *This panel controls everything that happens after the "Calendar" button is pressed
+ * This panel controls everything that happens after the "Calendar" button is pressed
  */
 public class DaysPanel extends JPanel
 {
@@ -28,7 +28,6 @@ public class DaysPanel extends JPanel
 	
 	private void gatherInfo()
 	{
-	
 	Scanner sc = new Scanner(System.in);
 	
 	//System.out.println("Enter the year: ");
@@ -43,6 +42,9 @@ public class DaysPanel extends JPanel
 	int monthNum = Integer.parseInt(monthText);
 	String dateInfo = "";
 	
+	/**
+	 * Ints for the days
+	 */
 	//int mm = sc.nextInt();
 	int d = 1;
 	int m = 1;
@@ -57,7 +59,9 @@ public class DaysPanel extends JPanel
 				"September", "October", "November", "December" 
 		};
 		
-		
+	/**
+	 * Array list for the amount of days in the month	
+	 */
 	int ar[] = { 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 	int monthOffset[] = {0, 3, 3, 6, 1, 4, 6, 2, 5, 0, 3, 5 };
 	

@@ -29,6 +29,10 @@ public class CalendarPanel extends JPanel
 	private SpringLayout layout;
 //	private JButton saveButton;
 
+	/**
+	 * @param controller
+	 * This panel sets the background color and lets calendarFrame switch screens
+	 */
 
 	public CalendarPanel(Controller controller)
 	{
@@ -43,7 +47,9 @@ public class CalendarPanel extends JPanel
 			setupListeners();
 			setupLayout();
 	}
-
+/**
+ * Sets background color
+ */
 	private void setupPanel()
 	{
 		this.setLayout(layout);
@@ -52,7 +58,9 @@ public class CalendarPanel extends JPanel
 		this.add(menuPanel);
 		menuPanel.add(calendarButton);
 	}
-
+/**
+ * Switches screens
+ */
 	private void setupListeners()
 	{
 		calendarButton.addActionListener(click -> controller.getFrame().changeScreen("Days"));
