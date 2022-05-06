@@ -16,6 +16,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 
 import calendar.view.CalendarPanel;
+/**
+ * @author dsan1423
+ * SCREENS PAGE
+ * Allows the user to switch screens from the welcome screen to the calendar screen
+ */
 
 public class CalendarFrame extends JFrame 
 {
@@ -45,6 +50,9 @@ public class CalendarFrame extends JFrame
 		setupFrame();
 	}
 	
+	/**
+	 * Displays menu and allows panels to show
+	 */
 		private void setupMenu()
 		{
 			JMenu screenMenu = new JMenu("Screens");

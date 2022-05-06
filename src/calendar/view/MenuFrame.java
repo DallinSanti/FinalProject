@@ -24,6 +24,9 @@ public class MenuFrame extends JFrame
 		setupMenu();
 		setupFrame();
 	}
+	/**
+	 * Dimensions for the JPanel
+	 */
 	
 	private void setupFrame()
 	{

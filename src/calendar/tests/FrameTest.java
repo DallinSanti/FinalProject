@@ -1,14 +1,12 @@
 package calendar.tests;
 
-public class FrameTest 
-{
 
 /**
  * Project imports
  */
-import chat.controller.Controller; //Change!
-import chat.view.ChatPanel; //Change!
-import chat.view.ChatFrame; //Change!
+import calendar.controller.Controller; //Change!
+import calendar.view.CalendarPanel; //Change!
+import calendar.view.CalendarFrame; //Change!
 import javax.swing.*;
 
 import java.awt.Component;
@@ -28,13 +26,13 @@ import org.junit.jupiter.api.Test;
 class FrameTest
 {
 	private Controller testedController; //Change!
-	private ChatFrame testedFrame; //Change!
+	private CalendarFrame testedFrame; //Change!
 
 	@BeforeEach
 	void setUp() throws Exception
 	{
 		this.testedController = new Controller();
-		this.testedFrame = new ChatFrame(testedController);
+		this.testedFrame = new CalendarFrame(testedController);
 	}
 
 	@AfterEach
@@ -51,8 +49,8 @@ class FrameTest
 		Method [] methods = testedFrame.getClass().getDeclaredMethods();
 		assertTrue(methods.length == 1, "You need 1 method in the ChatFrame");
 		assertTrue(testedFrame.getTitle().length() > 5, "Your title needs at least 6 letters");
-		assertTrue(testedFrame.getContentPane() instanceof ChatPanel, "Your ChatFrame needs to have a ChatPanel inside");  //Change!
+		assertTrue(testedFrame.getContentPane() instanceof CalendarPanel, "Your ChatFrame needs to have a ChatPanel inside");  //Change!
 	}
 
 }
-}
+

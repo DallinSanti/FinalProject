@@ -1,12 +1,10 @@
 package calendar.tests;
 
-public class PanelTest 
-{
 	/**
 	 * Project imports
 	 */
-	import chat.controller.Controller; //Change me
-	import chat.view.ChatPanel; //Change me
+	import calendar.controller.Controller; //Change me
+	import calendar.view.CalendarPanel; //Change me
 	import javax.swing.*;
 
 	import java.awt.*;
@@ -26,13 +24,13 @@ public class PanelTest
 	class PanelTest
 	{
 		private Controller testedController; //Change me
-		private ChatPanel testedPanel; //Change me
+		private CalendarPanel testedPanel; //Change me
 
 		@BeforeEach
 		void setUp() throws Exception
 		{
 			this.testedController = new Controller(); //Change me
-			this.testedPanel = new ChatPanel(testedController); //Change me
+			this.testedPanel = new CalendarPanel(testedController); //Change me
 		} 
 
 		@AfterEach
@@ -109,4 +107,4 @@ public class PanelTest
 		}
 
 	}
-}
+
