@@ -54,11 +54,12 @@ public class DaysPanel extends JPanel
 	String month[] = 
 		{ 
 				"January", "February", "March", "April", "May", "June", "July", "August",
-				"September", "October", "Novemeber", "December" 
+				"September", "October", "November", "December" 
 		};
 		
 		
 	int ar[] = { 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+	int monthOffset[] = {0, 3, 3, 6, 1, 4, 6, 2, 5, 0, 3, 5 };
 	
 	while (true)
 	{
@@ -70,13 +71,15 @@ public class DaysPanel extends JPanel
 		if (y % 4 == 0 && y % 100 != 0 || y % 100 == 0)
 		{
 			ar[1] = 29;
+			monthOffset = new int[] { 0, 3, 4, 0, 2, 5, 0, 3, 6, 1, 4, 6 };
 		}
 		
 		else
 		{
 			ar[1] = 28;
+			monthOffset = new int[] { 0, 3, 3, 6, 1, 4, 6, 2, 5, 0, 3, 5 };
 		}
-		dy++;
+//		dy++;
 		d++;
 		
 		if (d > ar[m - 1])
@@ -91,21 +94,24 @@ public class DaysPanel extends JPanel
 			y++;
 		}
 		
-		if (dy == 7)
-		{
-			dy = 0;
-		}
+//		if (dy == 6)
+//		{
+//			dy = 0;
+//		}
 	}
 	
-	int c = dy;
+//	int c = dy;
 	
 	if (y % 4 == 0 && y % 100 != 0 || y % 400 == 0)
 	{
-		ar[1] = 29;	
+		ar[1] = 29;
+		monthOffset = new int[] { 0, 3, 4, 0, 2, 5, 0, 3, 6, 1, 4, 6 };
 	}
+	
 	else
 	{
 		ar[1] = 28;
+		monthOffset = new int[] { 0, 3, 3, 6, 1, 4, 6, 2, 5, 0, 3, 5 };
 	}
 	
 	dateInfo += "Month: " + month[monthNum -1] +"\n" + "";
@@ -129,29 +135,48 @@ public class DaysPanel extends JPanel
 	
 	System.out.println();
 	
-	for (int j = 1; j <= (ar[monthNum - 1] + dy); j++)
-	{
-		if (j < 6) 
-		{
-			dy = dy % 6;
-		}
-	}
+//	for (int j = 1; j <= (ar[monthNum - 1] + dy); j++)
+//	{
+//		if (j < 6) 
+//		{
+//			dy = dy % 6;
+//		}
+//	}
+	int year = yearNum - 1;
+	int beginningDay = (1 + monthOffset[monthNum - 1] + 5*(year % 4) + 4*(year % 100) + 6*(year % 400)) % 7;
+	System.out.println();
+	System.out.println(beginningDay);
 	
-	int spaces = dy;
+	int spaces = beginningDay;
+	System.out.println(spaces);
 	if (spaces < 0)
 	{
 		spaces = 6;
 	}
 	JLabel daysLabel = new JLabel();
 	String daysLayout = "<HTML>";
+//	daysLayout += "<style>";
+//	daysLayout += ".day-layout{"; 
+//	daysLayout += "display: inline-block;";
+//	daysLayout += "width: 50px;";
+//	daysLayout += "text-align: center;";
+//	daysLayout += "} </style>";
 	
 	for (int i = 0; i < spaces; i++)
 	{
-		daysLayout += "&nbsp&nbsp&nbsp&nbsp";
+		daysLayout += "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp";
 	}//	System.out.printf("    ");
 	for (int i = 1; i <= ar[monthNum - 1]; i++)
 	{
-		daysLayout += String.format(" %4d ", i);
+//		daysLayout += "<span style='display: block; width: 50px; background-color: green; margin-left: 50px;'>" +  String.format(" %12d ", i) + "</span>";
+		if (i <= 9)
+		{
+			daysLayout += "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;" + i;
+		} 
+		else
+		{
+			daysLayout += "&nbsp&nbsp&nbsp&nbsp&nbsp;" + i;
+		}
 		System.out.printf(" %4d ", i);
 		
 		if (((i + spaces) % 7 == 0) || (i == ar[monthNum - 1]))
@@ -164,5 +189,6 @@ public class DaysPanel extends JPanel
 	daysLayout += "</html>";
 		daysLabel.setText(daysLayout);
 		add(daysLabel);
+		
  }
 }
