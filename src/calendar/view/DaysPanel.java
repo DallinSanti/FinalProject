@@ -133,7 +133,9 @@ public class DaysPanel extends JPanel
 	
 	System.out.println();
 	
-
+	/**
+	 * Below is the equation to get the start of the month using a gregorian calendar
+	 */
 	int year = yearNum - 1;
 	int beginningDay = (1 + monthOffset[monthNum - 1] + 5*(year % 4) + 4*(year % 100) + 6*(year % 400)) % 7;
 	System.out.println();
@@ -148,6 +150,9 @@ public class DaysPanel extends JPanel
 	JLabel daysLabel = new JLabel();
 	String daysLayout = "<HTML>";
 
+	/**
+	 * HMTL code for the spacing in the actual calendar part
+	 */
 	
 	for (int i = 0; i < spaces; i++)
 	{
